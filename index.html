@@ -1,250 +1,186 @@
 <!DOCTYPE html>
 <style>
-    .heading
-    {
-        text-align:center;
-        font-size:80px;
-        position: sticky;
+    body {
+        background-color: black;
+        color: white;
     }
 
-    .para
-    {
+    .para {
         text-align: left;
-        outline-style: inset;
-        padding:35px;
-        width:auto;
-        z-index: -1;
+        padding: 35px;
+        border: solid white;
+        margin: 2cm 2cm;
     }
 
-    .gitpro
-    {
-        float:right;
-        position:relative;
-        width: 5cm;
-        margin:0.5cm;
-        border: 5px solid rgb(139, 139, 139);
-        border-radius: 5px;
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    }
-
-    .cntbtn
-    {
+    .cntbtn {
         position: sticky;
         top: 2px;
         padding: 10px 20px;
         display: inline-block;
         border: none;
-        font-size:25px;
+        font-size: 25px;
         border-radius: 5px;
         transition-duration: 0.4s;
         margin: 5px;
         cursor: pointer;
-        animation-name: cntanim;
-        animation-duration: 6s;
-        animation-iteration-count: infinite;
         width: 130px;
         transition: width 2s;
     }
 
-    .cntbtn1
-    {
+    .cntbtn1 {
         background-color: white;
-        border: 2px solid #0ccf6e;
     }
 
-    @keyframes cntanim
-    {
-        0%   {background-color:cyan; left:0px; top:0px;}
-        25%  {background-color:rgb(0, 255, 170); left:200px; top:0px;}
-        50%  {background-color:cyan; left:200px; top:200px;}
-        75%  {background-color:rgb(0, 255, 170); left:0px; top:200px;}
-        100% {background-color:cyan; left:0px; top:0px;}
-    }
-    
-    .cntbtn:hover
-    {
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    .cntbtn:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         color: white;
         width: 160px;
-        animation-name: stop;
     }
 
-    @keyframes stop
-    {
-        background-color: rgb(0, 255, 170);
-    }
-
-    .dropdown
-    {
+    .dropdown {
         position: relative;
         display: inline-block;
     }
 
-    .dropdown-content
-    {
+    .dropdown-content {
         display: none;
         position: absolute;
-        background-color: rgb(0, 255, 170);
+        background-color: rgb(255, 255, 255);
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
-    .dropdown-content a
-    {
+    .dropdown-content a {
         color: black;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
     }
 
-    .dropdown-content a:hover
-    {
+    .dropdown-content a:hover {
         color: black;
     }
 
-    .dropdown-content a:hover
-    {
-        background-color: #ddd;
+    .dropdown-content a:hover {
+        background-color: rgb(170, 170, 170);
     }
 
-    .dropdown:hover .dropdown-content
-    {
+    .dropdown:hover .dropdown-content {
         display: block;
     }
 
-    .dropdown:hover .cntbtn
-    {
-        background-color: rgb(0, 255, 170);
-        color:black;
+    .dropdown:hover .cntbtn {
+        background-color: rgb(255, 255, 255);
+        color: black;
         opacity: 1;
         right: 0;
     }
 
-    .drplnk:link
-    {
+    .drplnk:link {
         color: black;
     }
 
-    .drplnk:visited
-    {
+    .drplnk:visited {
         color: black;
     }
 
-    a:link
-    {
+    a:link {
         color: rgb(79, 155, 185);
         text-decoration: none;
     }
 
-    a:visited
-    {
+    a:visited {
         color: rgb(79, 155, 185);
         text-decoration: none;
     }
 
-    details
-    {
+    details {
         cursor: pointer;
     }
 
-    #grad1
-    {
-        background-color: rgb(0, 255, 170); /* For browsers that do not support gradients */
-        background-image: linear-gradient(to right, rgb(0, 255, 170), cyan);
-    }
-
-    #grad10
-    {
-        height: 200px;
-        background-color: rgb(0, 255, 170); /* For browsers that do not support gradients */
-        background-image: linear-gradient(to right, rgb(0, 255, 170), cyan);
-    }
-
-    .gitstick
-    {
+    .gitstick {
         style="box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);"
     }
 </style>
-<html style="cursor: default;" id="grad1">
-    <head>
-        <meta charset="utf-8">
-        <meta name=full-screen content=yes>
-        <meta property="og:type" content="website" />
-        <title>Avinash's Website</title>
-        </head>
-    <body>
-        <img src="https://visitor-badge.laobi.icu/badge?page_id=davinash97.davinash97" alt="VisitorBadge" width="8%" align="right" style="position: relative;">
-        <div class="dropdown">
-            <button class="cntbtn cntbtn1">Contact</button>
-            <div class="dropdown-content">
-              <a href="https://www.github.com/davinash97" class="drplnk" target="_blank">Github</a>
-              <a href="https://t.me/davinash97" class="drplnk" target="_blank">Telegram</a>
-              <a href="https://forum.xda-developers.com/member.php?u=7782180" class="drplnk" target="_blank">XDA</a>
-            </div>
-          </div>
-        <h1 class="heading">Hey There!</h1>
-        <p> 
-            <a href="https://www.github.com/davinash97" target="_blank"><img src="https://avatars.githubusercontent.com/u/56125142?v=4" class="gitpro" alt="My Github Profile"></a>
-            <pre class="para">
-                <h2>About Me:</h2>
-                Hi! <img src="https://camo.githubusercontent.com/e8e7b06ecf583bc040eb60e44eb5b8e0ecc5421320a92929ce21522dbc34c891/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6876524a434c467a6361737252346961377a2f67697068792e676966" href="#" width="20px"> Avinash here. I am Tech enthusiast,
-                Learning Some Programming Languages (Self-Learning).
-                For now can write "Hello World" in <img src="https://camo.githubusercontent.com/6cc41155e58a4eebe7353d524da5ebb0de7aaf4fd4ad45fb9a433c8b41d38c16/68747470733a2f2f747365332e6d6d2e62696e672e6e65742f74683f69643d4f49502e7276756a594b4f546d2d2d5654334b545a775633786748614861267069643d417069" width="20px" href="#">C and <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" width="20px" href="#">Python (More Coming Soon).
-                Learning a lot through Open-source Community.
-                </pre>
-            </p>
-            <div>
-                <b style="font-size: 35px;"><u>My Contributions</u></b>
-                        <br>
-                        <br>
-                        <ul>
-                            <details>
-                            <summary><b>Android Kernel</b> <i>(Custom)</i></button></summary>
-                            <br>
+<html style="cursor: default; border: solid white; border-radius: 2px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name=full-screen content=yes>
+    <meta property="og:type" content="website" />
+    <title>Avinash's Website</title>
+</head>
+
+<body>
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=davinash97.davinash97" alt="VisitorBadge" width="8%"
+        align="right" style="position: relative;">
+    <div class="dropdown">
+        <button class="cntbtn cntbtn1">Contact</button>
+        <div class="dropdown-content">
+            <a href="https://www.github.com/davinash97" class="drplnk" target="_blank">Github</a>
+            <a href="https://t.me/davinash97" class="drplnk" target="_blank">Telegram</a>
+            <a href="https://forum.xda-developers.com/member.php?u=7782180" class="drplnk" target="_blank">XDA</a>
+        </div>
+    </div>
+    <div class="para">
+        <h2>About Me:</h2>
+        Hi! <img src="https://camo.githubusercontent.com/e8e7b06ecf583bc040eb60e44eb5b8e0ecc5421320a92929ce21522dbc34c891/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6876524a434c467a6361737252346961377a2f67697068792e676966" href="#" width="20px"> Avinash here. I am Tech enthusiast,<br> Learning Some Programming Languages (Self-Learning).<br>
+        For now can write "Hello World" in <img src="https://camo.githubusercontent.com/6cc41155e58a4eebe7353d524da5ebb0de7aaf4fd4ad45fb9a433c8b41d38c16/68747470733a2f2f747365332e6d6d2e62696e672e6e65742f74683f69643d4f49502e7276756a594b4f546d2d2d5654334b545a775633786748614861267069643d417069" width="20px" href="#">C and <img
+            src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" width="20px" href="#">Python<br> (More Coming Soon). Learning a lot through Open-source Community.<br>
+    </div>
+    <div>
+        <b style="font-size: 35px; margin-left: 1cm;"><u>My Contributions</u></b>
+        <ul>
+            <details>
+                <summary><b>Android Kernel</b> <i>(Custom)</i></button></summary>
+                <ul>
+                    <li>
+                        <details>
+                            <summary>AEON Kernel <b>For Exynos 7870</b></summary>
                             <ul>
-                                <li><details>
-                                <summary>AEON Kernel <b>For Exynos 7870</b></summary>
-                                    <ul>
-                                        <li><a href="https://github.com/davinash97/AEON"> Source </a></li>
-                                        <li><a href="https://github.com/davinash97/AEON/releases"> Prebuilts </a></li>
-                                    </ul>
-                                </details></li>
-                            <li><details>
-                                <summary>Prish Kernel <b>For Exynos 9611</b><i> (Just small Contributions)</i></summary>
-                                     <ul>
-                                        <li><a href="https://github.com/neel0210/Kakarot_Kernel_M30sdd"> Source </a></li>
-                                        <li><a href="https://github.com/PrishKernel/PrishKernel_9611/releases"> Prebuilts </a></li>
-                                    </ul>
+                                <li><a href="https://github.com/davinash97/AEON"> Source </a></li>
+                                <li><a href="https://github.com/davinash97/AEON/releases"> Prebuilts </a></li>
                             </ul>
-                                </details></li>
-                            <details>
-                                    <summary><b>Telegram Bot</b></summary>
-                                    <ul>
-                                        <li><a href="https://github.com/davinash97/avabot">Source</a></li>
-                                        <li><a href="https://t.me/davinash97bot">Link to Bot</a></li>
-                                    </ul>
-                                </details>
-                                <details>
-                                <summary><b>Kitchen </b><i>(More Like Unpacker and Repacker)</i></summary>
-                                <ul>
-                                    <li><a href="https://github.com/neel0210/dynamic">Dynamic Unpacker</a></li>
-                                </ul>
-                            </details>
-                        </ul>
-                </div>
-        </body>
-        <div>
-        <h2 style="font-size: 35px;"><u>My Github Stats</u></h2>
-            <ol>
-            <li><br><img src="https://github-readme-streak-stats.herokuapp.com/?user=DAvinash97&theme=dark" alt="Github_Stats1" width="25%" href="#" class="gitstick"></li>
-            <li><br><img src="https://github-readme-stats.vercel.app/api?username=davinash97&&show_icons=true&theme=gotham" alt="Github_Stats2" width="25%" href="#" class="gitstick"></li>
-            <li><br><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=davinash97&&show_icons=true&theme=gotham" alt="Github_Stats3" width="15%" href="#" class="gitstick"></li>
-            <br>
-            </ol>
-            </div>      
-        <footer align="center" style="font-size:45px;position: relative; ">
-            <div>Thanks For Visiting.</div>
-            <div>Have A nice Day!</div>
-        </footer>
- </html>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Prish Kernel <b>For Exynos 9611</b><i> (Just small Contributions)</i></summary>
+                            <ul>
+                                <li><a href="https://github.com/neel0210/Kakarot_Kernel_M30sdd"> Source </a></li>
+                                <li><a href="https://github.com/PrishKernel/PrishKernel_9611/releases"> Prebuilts </a>
+                                </li>
+                            </ul>
+                </ul>
+            </details>
+            </li>
+            <details>
+                <summary><b>Telegram Bot</b></summary>
+                <ul>
+                    <li><a href="https://github.com/davinash97/avabot">Source</a></li>
+                    <li><a href="https://t.me/davinash97bot">Link to Bot</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary><b>Kitchen </b><i>(More Like Unpacker and Repacker)</i></summary>
+                <ul>
+                    <li><a href="https://github.com/neel0210/dynamic">Dynamic Unpacker</a></li>
+                </ul>
+            </details>
+        </ul>
+    </div>
+</body>
+<div>
+    <h2 style="font-size: 35px; margin: 2cm 1cm;"><u>My Github Stats</u></h2>
+    <div style="margin: 2cm;">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=DAvinash97&theme=dark" alt="Github_Stats1"
+            width="25%" href="#" class="gitstick" style="margin-left: 2cm;">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=davinash97&&show_icons=true&theme=gotham"
+            alt="Github_Stats3" width="15%" href="#" class="gitstick" style="margin-left: 2cm;">
+        <img src="https://github-readme-stats.vercel.app/api?username=davinash97&&show_icons=true&theme=gotham"
+            alt="Github_Stats2" width="25%" href="#" class="gitstick" style="margin-left: 2cm;">
+    </div>
+</div>
+
+</html>
