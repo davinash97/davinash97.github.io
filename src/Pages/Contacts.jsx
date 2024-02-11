@@ -4,14 +4,10 @@ import React from "react";
 import { contactsCard as Card } from "../Components/card.jsx";
 
 export default function Contacts() {
-  // document
-  //     .querySelectorAll("input")
-  //     .forEach((input) => input.setAttribute("disabled", true));
-
   return (
     <section className="flex flex-col py-10 items-center gap-10">
       <h2 className="text-center">Contacts</h2>
-      <div>
+      {/* <div>
         <form
           action="mailto:davinash97.work@gmail.com"
           method="post"
@@ -63,7 +59,7 @@ export default function Contacts() {
           </div>
         </form>
       </div>
-      <h4 className="text-center">OR</h4>
+      <h4 className="text-center">OR</h4> */}
       <div className="flex gap-10 justify-around contacts">
         <Card
           title="Gmail"
@@ -77,7 +73,7 @@ export default function Contacts() {
         />
 
         <Card
-          title="Telegram"
+          title="Linkedin"
           link="https://linkedin.com/in/davinash97"
           imgSrc={getImageUrl("linkedin")}
         />
