@@ -9,7 +9,7 @@ import { CiLocationOn } from "react-icons/ci";
 import AnimatedSection from "@/app/components/AnimatedSection";
 import { PiTelegramLogo } from "react-icons/pi";
 import { SlSocialLinkedin } from "react-icons/sl";
-import { BiLogoGmail } from "react-icons/bi";
+import { FaGithub } from "react-icons/fa6";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
 
@@ -73,13 +73,13 @@ export default function Contact() {
 						viewport={{ amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}>
 						<a
-							href="mailto:davinash97.work@gmail.com"
+							href="https://github.com/davinash97"
 							target="_blank"
 							rel="noopener noreferrer">
 							<ContactCard
-								title="Email"
-								image={BiLogoGmail}
-								content="davinash97.work@gmail.com"
+								title="Github"
+								image={FaGithub}
+								content="davinash97"
 							/>
 						</a>
 						<a
