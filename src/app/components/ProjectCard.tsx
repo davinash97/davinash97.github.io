@@ -40,7 +40,7 @@ export default function ProjectCard({
 					draggable="false"
 					className="w-full h-full select-none object-cover rounded-md"
 				/>
-				<h3 className="absolute font-bold text-lg z-10 w-full bottom-1 text-center text-white bg-purple-500">
+				<h3 className="absolute font-bold text-lg z-10 w-full bottom-1 text-center text-(--accent) bg-(--secondary)">
 					{name || "This is a dummy project name"}
 				</h3>
 			</div>
@@ -62,7 +62,7 @@ export default function ProjectCard({
 					{techStack.map((tech, index) => (
 						<span
 							key={index}
-							className="text-gray-200 text-sm rounded-full px-2 py-1 bg-purple-500">
+							className="text-sm rounded-full px-2 py-1 text-(--background) bg-(--secondary)">
 							{tech}
 						</span>
 					))}

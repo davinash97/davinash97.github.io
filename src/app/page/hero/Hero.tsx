@@ -65,7 +65,7 @@ export default function Hero() {
 		<section className="relative h-screen w-screen m-0 p-0">
 			{/* GPU-friendly animated gradient background */}
 			<motion.div
-				className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 animate-gradient-x"
+				className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-(--primary) via-(--background) to-(--secondary) animate-gradient-x"
 				style={{
 					opacity,
 					transform: `translateY(${translateY}px)`,
@@ -75,7 +75,7 @@ export default function Hero() {
 
 			{/* Overlay */}
 			<motion.div
-				className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black/30 text-white text-center"
+				className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white bg-black/30 text-center"
 				style={{
 					opacity,
 					transform: `translateY(${translateY}px)`,
@@ -83,7 +83,7 @@ export default function Hero() {
 				}}>
 				{/* Heading with stagger */}
 				<motion.h1
-					className={`text-3xl md:text-6xl lg:text-6xl xl:text-8xl break-words p-6 ${poppins.className}`}>
+					className={`text-3xl md:text-6xl lg:text-6xl xl:text-8xl break-words p-6 text-(--primary) ${poppins.className}`}>
 					{"Welcome to my Portfolio".split(" ").map((word, i) => (
 						<motion.span
 							key={i}
@@ -91,7 +91,7 @@ export default function Hero() {
 							variants={headingVariants}
 							initial="hidden"
 							animate="visible"
-							className="inline-block mr-2 heading">
+							className="inline-block mr-2">
 							{word}
 						</motion.span>
 					))}
@@ -108,7 +108,7 @@ export default function Hero() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
-						className={`${greatVibes.className} inline-block animate-bounce hover:[animation-play-state:paused] cursor-auto text-purple-500`}>
+						className={`${greatVibes.className} inline-block animate-bounce hover:[animation-play-state:paused] cursor-auto)`}>
 						{name}
 					</motion.span>
 				</motion.h3>

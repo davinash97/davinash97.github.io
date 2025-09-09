@@ -28,23 +28,13 @@ export default function Education() {
 			title: "Diploma in Electrical Engineering (Lateral)",
 			organization: "Rungta College of Engineering & Technology",
 			duration: "2017-2019",
-			detail: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-								Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-								when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-								It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-								It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-								and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+			detail: `I completed my Diploma in Electrical Engineering from Rungta College of Engineering & Technology, where I gained extensive knowledge during my academic years (2017-2019 Lateral Entry after ITI). I worked on various projects, including an Arduino-based robotic arm capable of picking up and placing objects, and a path-following vehicle designed to reach a predefined destination. Both projects were controllable via an Android device using Bluetooth communication.`,
 		},
 		{
 			title: "Bachelors in Computer Science Engineering (Lateral)",
 			organization: "Rungta College of Engineering & Technology",
 			duration: "2021-2024",
-			detail: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-								Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-								when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-								It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-								It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-								and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+			detail: `I completed my Bachelor of Technology in Computer Science Engineering from 2021 to 2024 (3 years due to Lateral Entry). Throughout my academic journey, I gained a solid understanding of how computers work, as well as the wide range of applications and software in the industry. During this time, I was part of a team that developed a social media-like platform for pets, designed to help users arrange playdates. Additionally, I worked on various web-based management software projects. These experiences significantly enhanced my knowledge and skills in web development and software engineering.`,
 		},
 	];
 	return (

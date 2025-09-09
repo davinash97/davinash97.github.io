@@ -15,9 +15,9 @@ export default function ContactCard({
 	content,
 }: ContactProps) {
 	return (
-		<div className="flex flex-row w-full gap-4 rounded-xl p-4 border-2 border-solid border-purple-500 items-center">
+		<div className="flex flex-row w-full gap-4 rounded-xl p-4 border-2 border-solid border-(--primary) items-center">
 			{/* Icon */}
-			<div className="h-[80px] w-[80px] flex items-center justify-center text-4xl text-purple-500">
+			<div className="h-[80px] w-[80px] flex items-center justify-center text-4xl text-(--primary)">
 				<Icon />
 			</div>
 

@@ -8,11 +8,21 @@
 	/* --background: #ffffff; */
 	/* --foreground: #171717; */
 	@apply bg-gray-200 text-black;
+	--primary: #8727e7;
+	--secondary: #9900ff;
+	--accent: #ceb8ff;
+	--foreground: #042004;
+	--background: #f6fef6;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		@apply bg-gray-900 text-gray-200;
+		--primary: #7818d8;
+		--secondary: #9900ff;
+		--accent: #170047;
+		--foreground: #dffbdf;
+		--background: #010901;
 		/* --background: #0a0a0a; */
 		/* --foreground: #ededed; */
 	}
@@ -27,6 +37,7 @@ h1,
 h2,
 h3 {
 	@apply select-none;
+	/* -webkit-text-stroke: 1px var(--accent); */
 }
 
 h2 {
