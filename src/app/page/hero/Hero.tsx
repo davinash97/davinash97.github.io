@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Poppins, Lato, Great_Vibes } from "next/font/google";
+import "./Hero.css";
 
 const nameArr = [
 	"Avinash",
@@ -65,7 +66,7 @@ export default function Hero() {
 		<section className="relative h-screen w-screen m-0 p-0">
 			{/* GPU-friendly animated gradient background */}
 			<motion.div
-				className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-(--primary) via-(--background) to-(--secondary) animate-gradient-x"
+				className="absolute top-0 left-0 w-full h-full animate-gradient-x"
 				style={{
 					opacity,
 					transform: `translateY(${translateY}px)`,
@@ -91,7 +92,10 @@ export default function Hero() {
 							variants={headingVariants}
 							initial="hidden"
 							animate="visible"
-							className="inline-block mr-2">
+							className="inline-block mr-2"
+							style={{
+								WebkitTextStroke: "1px black",
+							}}>
 							{word}
 						</motion.span>
 					))}
