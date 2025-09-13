@@ -29,6 +29,7 @@ export default function Education() {
 			organization: "Rungta College of Engineering & Technology",
 			duration: "2017-2019",
 			detail: `I completed my Diploma in Electrical Engineering from Rungta College of Engineering & Technology, where I gained extensive knowledge during my academic years (2017-2019 Lateral Entry after ITI). I worked on various projects, including an Arduino-based robotic arm capable of picking up and placing objects, and a path-following vehicle designed to reach a predefined destination. Both projects were controllable via an Android device using Bluetooth communication.`,
+
 		},
 		{
 			title: "Bachelors in Computer Science Engineering (Lateral)",
