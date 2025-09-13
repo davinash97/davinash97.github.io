@@ -1,4 +1,14 @@
-/* GPU-accelerated gradient animation */
+.animate-gradient-x {
+	background: linear-gradient(
+		90deg,
+		rgba(42, 123, 155, 1),
+		rgba(87, 199, 133, 1),
+		rgba(237, 221, 83, 1)
+	);
+	background-size: 300% 300%;
+	animation: gradient-x 10s ease infinite;
+}
+
 @keyframes gradient-x {
 	0% {
 		background-position: 0% 50%;
@@ -9,9 +19,4 @@
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-.animate-gradient-x {
-	background-size: 200% 200%;
-	animation: gradient-x 15s ease infinite;
 }

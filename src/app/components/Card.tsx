@@ -47,7 +47,7 @@ export default React.memo(function Card({
 						href={link}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`text-purple-500 inline-flex items-center ${lato.className}`}>
+						className={`text-(--primary) inline-flex items-center ${lato.className}`}>
 						<LinkIcon className="mr-1" /> Visit
 					</a>
 				)}
