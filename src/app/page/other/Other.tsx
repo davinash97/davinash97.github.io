@@ -24,7 +24,7 @@ export default function Other() {
 	const content = [
 		{
 			title: "AEON Custom Kernel",
-			organization: "Samsung Exynos 7870",
+			subtitle: "Samsung Exynos 7870",
 			duration: "2017",
 			detail: `AEON is a custom Linux kernel designed for Samsung devices with the Exynos 7870 chipset.
 					It focuses on improving performance, optimizing battery life, and enabling advanced customization.
@@ -33,7 +33,7 @@ export default function Other() {
 		},
 		{
 			title: "Custom ROMs",
-			organization: "Samsung Exynos 7870",
+			subtitle: "Samsung Exynos 7870",
 			duration: "2017",
 			detail: `Ported custom ROMs to various Samsung devices, including Galaxy J7 Nxt, Neo, J6, and A3.
 					Collaborated with other developers to port and maintain ROMs for the Exynos 7870 chipset.
@@ -42,7 +42,7 @@ export default function Other() {
 		},
 		{
 			title: "Group Management Bot",
-			organization: "Telegram",
+			subtitle: "Telegram",
 			duration: "2017",
 			detail: `Maintained a Python-based Telegram bot using the Python Telegram Bot library,
 					focused on group management and automating tasks like fetching resources from

@@ -26,7 +26,7 @@ export default function Experience() {
 	const content = [
 		{
 			title: "Catalog Associate",
-			organization: "Amazon Development Center",
+			subtitle: "Amazon Development Center",
 			duration: "Jan 2025 - Present",
 			detail: `Currently working at Amazon as a Catalog Associate, specializing in Product Knowledge Classification.
 					In my role, I have classified thousands of products accurately according to Standard Operating Procedures (SOPs),
@@ -37,7 +37,7 @@ export default function Experience() {
 		},
 		{
 			title: "Web Developer Intern",
-			organization: "Rungta Infotech Pvt Ltd",
+			subtitle: "Rungta Infotech Pvt Ltd",
 			duration: "Feb 2024 - Apr 2024",
 			detail: `Worked as a Web Development Intern at Rungta Infotech PVT LTD, where I gained hands-on experience in building
 					and maintaining web applications. Throughout my internship, I learned and worked with key web development technologies

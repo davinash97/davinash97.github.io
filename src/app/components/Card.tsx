@@ -7,7 +7,7 @@ const lato = Lato({ weight: "400", subsets: ["latin"] });
 
 type Props = {
 	title: string;
-	organization: string;
+	subtitle: string;
 	duration: string;
 	detail: React.ReactNode;
 	className?: string;
@@ -17,7 +17,7 @@ type Props = {
 
 export default React.memo(function Card({
 	title,
-	organization,
+	subtitle,
 	duration,
 	detail,
 	className,
@@ -32,7 +32,7 @@ export default React.memo(function Card({
 			<h3 className="text-2xl font-semibold">{title}</h3>
 
 			<div className="flex justify-between text-sm">
-				<span className="no-anim">{organization}</span>
+				<span className="no-anim">{subtitle}</span>
 				<time>{duration}</time>
 			</div>
 

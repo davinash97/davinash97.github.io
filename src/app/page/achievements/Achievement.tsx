@@ -51,7 +51,7 @@ export default function Achievement() {
 					{[
 						{
 							title: "Programming in Java",
-							organization: "IIT-KGP",
+							subtitle: "IIT-KGP",
 							duration: "2023",
 							detail: `Successfully completed the Java Programming course offered by IIT-KGP through the NPTEL program,
 							within the prescribed duration. Gained a thorough understanding of core Object-Oriented Programming
@@ -62,7 +62,7 @@ export default function Achievement() {
 						},
 						{
 							title: "Collections in Java",
-							organization: "Great Learning",
+							subtitle: "Great Learning",
 							duration: "2024",
 							detail: `Gained a comprehensive understanding of the Java Collections Framework, including key concepts such as
 							List, Set, Map, and their implementations (ArrayList, LinkedList, HashSet, TreeSet, HashMap, etc.).
@@ -73,7 +73,7 @@ export default function Achievement() {
 						},
 						{
 							title: "OOP in Java",
-							organization: "Great Learning",
+							subtitle: "Great Learning",
 							duration: "2024",
 							detail: `Gained a thorough understanding of core object-oriented programming concepts,
 							including inheritance, multiple inheritance, polymorphism, encapsulation,
@@ -84,7 +84,7 @@ export default function Achievement() {
 						},
 						{
 							title: "Java (Basics)",
-							organization: "HackerRank",
+							subtitle: "HackerRank",
 							duration: "2024",
 							detail: `Successfully completed the Java Basics course on HackerRank, developing a strong
 							foundation in core Java programming concepts. Covered essential topics such as data types,
@@ -95,7 +95,7 @@ export default function Achievement() {
 						},
 						{
 							title: "Software Engineering in Java",
-							organization: "HackerRank",
+							subtitle: "HackerRank",
 							duration: "2024",
 							detail: `Completed the Software Engineering Intern program on HackerRank, gaining hands-on experience
 							in problem-solving, coding best practices, and core software development concepts. Developed skills
@@ -106,7 +106,7 @@ export default function Achievement() {
 						},
 						{
 							title: "Solved 300+ questions in Java",
-							organization: "LeetCode",
+							subtitle: "LeetCode",
 							duration: "2024",
 							detail: `Solved over 300 coding problems on LeetCode, focusing on Easy and Medium difficulty levels,
 							to strengthen problem-solving skills and algorithmic thinking. Maintained a continuous streak of
