@@ -27,7 +27,7 @@ export default function Home() {
 	return (
 		<>
 			<Suspense fallback={<Loading />}>
-				<main className="flex flex-col gap-5 text-center items-center justify-center p-0 m-0">
+				<main className="flex flex-col gap-5 text-center items-center justify-center p-0 m-0 bg-gray-200 text-black dark:bg-gray-900 dark:text-gray-200">
 					<Hero />
 					<About />
 					<Skill />

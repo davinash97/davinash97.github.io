@@ -167,7 +167,7 @@ export default function Contact() {
 							/>
 							<button
 								type="submit"
-								className="self-end px-6 py-2 bg-(--primary) text-(--background) rounded-md hover:bg-gray-800 transition"
+								className="self-end px-6 py-2 bg-(--primary) text-(--background) rounded-md hover:bg-gray-800 hover:cursor-pointer transition"
 								disabled={loading}>
 								{/* Send */}
 								{loading ? "Sending..." : "Send"}

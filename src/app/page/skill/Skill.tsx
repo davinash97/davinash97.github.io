@@ -31,11 +31,11 @@ export default function Skill() {
 	const content = [
 		{
 			skillName: "Programming Language",
-			skillSet: ["Java", "JavaScript", "Python"],
+			skillSet: ["Java", "JavaScript", "TypeScript", "Python"],
 		},
 		{
 			skillName: "Web Development",
-			skillSet: ["React.js", "TailwindCSS", "SpringBoot"],
+			skillSet: ["React.js", "Next.js	", "TailwindCSS", "SpringBoot"],
 		},
 		{
 			skillName: "Database",

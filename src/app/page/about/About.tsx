@@ -9,7 +9,9 @@ const lato = Lato({ weight: "400", subsets: ["latin"] });
 export default function About() {
 	const title = "About me";
 	return (
-		<section className="flex flex-col w-screen h-[60dvh] text-center items-center justify-around gap-5 overflow-x-hidden">
+		<section
+			className="flex flex-col w-screen text-center items-center justify-around gap-5 overflow-x-hidden xl:px-60 lg:px-0"
+			style={{ height: "60dvh" }}>
 			<AnimatedSection>
 				<motion.h2
 					className="w-full flex flex-row justify-center items-center cursor-pointer"

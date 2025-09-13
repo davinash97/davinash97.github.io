@@ -7,8 +7,20 @@ const corsHeaders = {
 	"Access-Control-Allow-Headers": "Content-Type",
 };
 
+const ipStore: Record<string, { count: number; firstRequestTime: number }> = {};
+const MAX_EMAILS_PER_HOUR = 3;
+const ONE_HOUR_MS = 60 * 60 * 1000;
+
+setInterval(() => {
+	const now = Date.now();
+	for (const ip in ipStore) {
+		if (now - ipStore[ip].firstRequestTime > ONE_HOUR_MS) {
+			delete ipStore[ip];
+		}
+	}
+}, 10 * 60 * 1000);
+
 export const handler: Handler = async (event) => {
-	// CORS Preflight
 	if (event.httpMethod === "OPTIONS") {
 		return {
 			statusCode: 200,
@@ -17,7 +29,6 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
-	// Only allow POST
 	if (event.httpMethod !== "POST") {
 		return {
 			statusCode: 405,
@@ -26,18 +37,40 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
+	const clientIP =
+		event.headers["x-forwarded-for"] ||
+		event.headers["client-ip"] ||
+		event.headers["x-nf-client-connection-ip"] ||
+		"unknown";
+
+	const now = Date.now();
+
+	if (!ipStore[clientIP]) {
+		ipStore[clientIP] = { count: 1, firstRequestTime: now };
+	} else {
+		const elapsed = now - ipStore[clientIP].firstRequestTime;
+
+		if (elapsed < ONE_HOUR_MS) {
+			if (ipStore[clientIP].count >= MAX_EMAILS_PER_HOUR) {
+				return {
+					statusCode: 429,
+					headers: corsHeaders,
+					body: JSON.stringify({
+						error: "Rate limit exceeded: Max 3 emails per hour allowed.",
+					}),
+				};
+			}
+			ipStore[clientIP].count++;
+		} else {
+			ipStore[clientIP] = { count: 1, firstRequestTime: now };
+		}
+	}
+
 	try {
 		const { firstname, lastname, email, subject, message } = JSON.parse(
 			event.body || "{}"
 		);
-		console.log("Parsed body:", {
-			firstname,
-			lastname,
-			email,
-			subject,
-			message,
-		});
-		// Optionally validate required fields
+
 		if (!firstname || !email || !message) {
 			return {
 				statusCode: 400,
@@ -45,10 +78,6 @@ export const handler: Handler = async (event) => {
 				body: JSON.stringify({ error: "Missing required fields" }),
 			};
 		}
-		// For debugging, log the event body and env vars
-		console.log("Request body:", event.body);
-		console.log("SMTP Host:", process.env.SMTP_HOST);
-		console.log("SMTP User:", process.env.SMTP_USER);
 
 		const transporter = nodemailer.createTransport({
 			host: process.env.SMTP_HOST,
@@ -65,7 +94,6 @@ export const handler: Handler = async (event) => {
 			to: process.env.SMTP_TO,
 			subject: subject,
 			text: `${message} \n${email}`,
-			// html: `<p>this is message in html</p>`,
 		});
 
 		return {
@@ -74,7 +102,6 @@ export const handler: Handler = async (event) => {
 			body: JSON.stringify({ message: "Email sent!" }),
 		};
 	} catch (error: any) {
-		// Print error to log
 		console.error("Error sending mail:", error);
 		return {
 			statusCode: 500,
