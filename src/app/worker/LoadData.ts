@@ -24,8 +24,8 @@ onmessage = async (event) => {
 			postMessage({ type, data: project });
 			break;
 		case "Skill":
-			break;
 			postMessage({ type, data: skill });
+			break;
 		default:
 			break;
 	}

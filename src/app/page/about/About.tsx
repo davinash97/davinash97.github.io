@@ -12,7 +12,7 @@ export default function About() {
 	const title = "About me";
 	return (
 		<section
-			className="flex flex-col w-screen text-center items-center justify-around gap-5 overflow-x-hidden xl:px-60 lg:px-0"
+			className="flex flex-col w-screen text-center items-center gap-5 overflow-x-hidden xl:px-60 lg:px-0"
 			style={{ height: "60dvh" }}>
 			<SectionTitle title={title} />
 
