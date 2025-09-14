@@ -1,7 +1,9 @@
 "use client";
 
-import AnimatedSection from "@/app/components/AnimatedSection";
-import Card from "@/app/components/Card";
+import AnimatedSection from "@components/AnimatedSection";
+import Card from "@components/Card";
+import { SectionTitle, useSectionData } from "@hooks/useSectionData";
+
 import { motion, Variants } from "framer-motion";
 
 const containerVariants: Variants = {
@@ -23,32 +25,11 @@ const cardVariants: Variants = {
 
 export default function Education() {
 	const title = "Education";
-	const content = [
-		{
-			title: "Diploma in Electrical Engineering (Lateral)",
-			subtitle: "Rungta College of Engineering & Technology",
-			duration: "2017-2019",
-			detail: `I completed my Diploma in Electrical Engineering from Rungta College of Engineering & Technology, where I gained extensive knowledge during my academic years (2017-2019 Lateral Entry after ITI). I worked on various projects, including an Arduino-based robotic arm capable of picking up and placing objects, and a path-following vehicle designed to reach a predefined destination. Both projects were controllable via an Android device using Bluetooth communication.`,
+	const data = useSectionData(title);
 
-		},
-		{
-			title: "Bachelors in Computer Science Engineering (Lateral)",
-			subtitle: "Rungta College of Engineering & Technology",
-			duration: "2021-2024",
-			detail: `I completed my Bachelor of Technology in Computer Science Engineering from 2021 to 2024 (3 years due to Lateral Entry). Throughout my academic journey, I gained a solid understanding of how computers work, as well as the wide range of applications and software in the industry. During this time, I was part of a team that developed a social media-like platform for pets, designed to help users arrange playdates. Additionally, I worked on various web-based management software projects. These experiences significantly enhanced my knowledge and skills in web development and software engineering.`,
-		},
-	];
 	return (
 		<section className="flex flex-col w-screen text-center items-center p-10 gap-10">
-			<AnimatedSection>
-				<h2>
-					{Array.from(title, (char, index) => (
-						<span key={index} className="heading">
-							{char}
-						</span>
-					))}
-				</h2>
-			</AnimatedSection>
+			<SectionTitle title={title} />
 
 			<AnimatedSection>
 				<motion.div
@@ -58,7 +39,7 @@ export default function Education() {
 					whileInView="visible"
 					exit="hidden"
 					viewport={{ once: false, amount: 0.3 }}>
-					{content.map((value, index) => (
+					{data.map((value, index) => (
 						<motion.div key={index} variants={cardVariants}>
 							<Card {...value} />
 						</motion.div>

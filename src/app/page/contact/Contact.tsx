@@ -1,15 +1,18 @@
 "use client";
 
-import { motion } from "framer-motion";
-import ContactCard from "@/app/components/ContactCard";
-import { Lato } from "next/font/google";
 import "./Contact.css";
+
+import ContactCard from "@components/ContactCard";
+import AnimatedSection from "@components/AnimatedSection";
+
+import { motion } from "framer-motion";
+import { Lato } from "next/font/google";
 import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
-import AnimatedSection from "@/app/components/AnimatedSection";
 import { PiTelegramLogo } from "react-icons/pi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { FaGithub } from "react-icons/fa6";
+import { SectionTitle } from "@hooks/useSectionData";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
 
@@ -47,21 +50,7 @@ export default function Contact() {
 		<section
 			className="flex flex-col w-screen items-center justify-around gap-12 py-4"
 			aria-labelledby="contact-heading">
-			{/* Heading */}
-			<AnimatedSection>
-				<motion.h2
-					id="contact-heading"
-					initial={{ opacity: 0, y: -30 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ amount: 0.3 }}
-					transition={{ duration: 0.7, ease: "easeOut" }}>
-					{Array.from(title, (char, index) => (
-						<span key={index} className="heading">
-							{char}
-						</span>
-					))}
-				</motion.h2>
-			</AnimatedSection>
+			<SectionTitle title={title} />
 
 			<AnimatedSection>
 				<div className="flex flex-col w-full lg:flex-row gap-10 justify-center items-center">

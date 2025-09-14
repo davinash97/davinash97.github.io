@@ -1,19 +1,14 @@
+import { ContactItem } from "app/types/Section";
+
 import { Lato } from "next/font/google";
-import { IconType } from "react-icons";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
-
-type ContactProps = {
-	title: string;
-	image: IconType;
-	content: React.ReactNode;
-};
 
 export default function ContactCard({
 	title,
 	image: Icon,
 	content,
-}: ContactProps) {
+}: ContactItem) {
 	return (
 		<div className="flex flex-row w-full gap-4 rounded-xl p-4 border-2 border-solid border-(--primary) items-center">
 			{/* Icon */}

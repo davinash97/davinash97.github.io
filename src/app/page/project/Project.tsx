@@ -1,7 +1,9 @@
 "use client";
 
-import AnimatedSection from "@/app/components/AnimatedSection";
-import ProjectCard from "@/app/components/ProjectCard";
+import AnimatedSection from "@components/AnimatedSection";
+import ProjectCard from "@components/ProjectCard";
+import { SectionTitle, useSectionData } from "@hooks/useSectionData";
+
 import { motion, Variants } from "framer-motion";
 
 const containerVariants: Variants = {
@@ -22,52 +24,12 @@ const cardVariants: Variants = {
 
 export default function Project() {
 	const title = "Project";
-	const content = [
-		{
-			name: "Global Buzz",
-			image: "/assets/global-buzz.jpg",
-			details: `GlobalBuzz is a dynamic news web application built with Next.js, Tailwind CSS, and
-					integrated with NewsAPI to fetch real-time news articles from various sources.
-					The platform provides users with the latest news across multiple categories in
-					a fast, responsive, and modern interface.`,
-			points: [
-				"Real-time news updates powered by NewsAPI.",
-				"Clean, responsive UI built using Tailwind CSS.",
-				"Server-side rendering and optimized performance with Next.js.",
-				"Dynamic routing to browse news by categories.",
-				"Deployed on Netlify for fast and reliable access.",
-			],
-			link: "https://global-buzz.netlify.app",
-			techStack: ["Next.js", "TailwindCSS"],
-		},
-		{
-			name: "Password Generator",
-			image: "/assets/pass-gen.jpg",
-			details: `Pass-Gen is a lightweight, browser-based password generator built using pure HTML, CSS, and Vanilla JavaScript.
-									It provides users with the ability to generate strong random passwords instantly without relying on any external frameworks or libraries.`,
-			points: [
-				"Generates secure, random passwords with configurable options.",
-				"Simple, intuitive user interface for ease of use.",
-				"Copy-to-clipboard functionality for quick password usage.",
-				"Fully responsive design, works seamlessly across devices.",
-				"Lightweight codebase ensuring fast load times and performance.",
-			],
-			link: "https://davinash97.github.io/pass-gen",
-			techStack: ["HTML", "CSS", "JavaScript"],
-		},
-	];
+	const data = useSectionData(title);
+
 	return (
 		<section className="w-screen flex flex-col items-center justify-center gap-5 p-10">
 			{/* Animated Heading */}
-			<AnimatedSection>
-				<h2 className="text-4xl">
-					{Array.from(title, (char, index) => (
-						<span key={index} className="heading">
-							{char}
-						</span>
-					))}
-				</h2>
-			</AnimatedSection>
+			<SectionTitle title={title} />
 
 			{/* Projects Grid */}
 			<AnimatedSection>
@@ -78,7 +40,7 @@ export default function Project() {
 					whileInView="visible"
 					exit="exit"
 					viewport={{ once: false, amount: 0.3 }}>
-					{content.map((value, index) => (
+					{data.map((value, index) => (
 						<motion.div key={index} variants={cardVariants}>
 							<ProjectCard {...value} />
 						</motion.div>

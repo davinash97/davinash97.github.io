@@ -1,31 +1,21 @@
+import { ProjectItem } from "app/types/Section";
+
 import { Lato } from "next/font/google";
 import Image from "next/image";
-import { IconType } from "react-icons";
 import { IoIosLink } from "react-icons/io";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
 
-type ProjectCardProps = {
-	name: string;
-	image: string;
-	details: string;
-	points: string[];
-	className?: string;
-	link: string;
-	techStack: string[];
-	linkIcon?: IconType;
-};
-
 export default function ProjectCard({
-	name,
+	title,
 	image,
-	details,
+	detail,
 	points,
 	className,
 	link,
 	techStack,
 	linkIcon: LinkIcon = IoIosLink,
-}: ProjectCardProps) {
+}: ProjectItem) {
 	return (
 		<div
 			className={`flex flex-col gap-5 w-full h-full max-w-md items-center justify-between border-2 rounded-xl p-5 ${
@@ -34,20 +24,20 @@ export default function ProjectCard({
 			<div className="relative flex flex-col h-[200px] w-[300px]">
 				<Image
 					src={image || "https://dummyimage.com/600x400/000/fff"}
-					alt={`image of ${name?.trim() || "dummy project"}`}
+					alt={`image of ${title?.trim() || "dummy project"}`}
 					fill={true}
 					loading="lazy"
 					draggable="false"
 					className="w-full h-full select-none object-cover rounded-md"
 				/>
 				<h3 className="absolute font-bold text-lg z-10 w-full bottom-1 text-center text-(--accent) bg-(--secondary)">
-					{name || "This is a dummy project name"}
+					{title || "This is a dummy project name"}
 				</h3>
 			</div>
 
 			<div
 				className={`flex flex-col gap-3 w-full max-w-sm justify-between ${lato.className}`}>
-				<p className="text-justify">{details}</p>
+				<p className="text-justify">{detail}</p>
 				<ol className="list-decimal list-inside flex flex-col gap-1">
 					{points.map((point, index) => (
 						<li key={index} className="text-justify">

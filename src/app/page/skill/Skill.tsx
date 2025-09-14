@@ -1,9 +1,11 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-import SkillCard from "@/app/components/SkillCard";
+import SkillCard from "@components/SkillCard";
+import AnimatedSection from "@components/AnimatedSection";
+import { SectionTitle, useSectionData } from "@hooks/useSectionData";
+
 import { Lato } from "next/font/google";
-import AnimatedSection from "@/app/components/AnimatedSection";
+import { motion, Variants } from "framer-motion";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
 
@@ -28,49 +30,13 @@ const cardVariants: Variants = {
 
 export default function Skill() {
 	const title = "Skill";
-	const content = [
-		{
-			skillName: "Programming Language",
-			skillSet: ["Java", "JavaScript", "TypeScript", "Python"],
-		},
-		{
-			skillName: "Web Development",
-			skillSet: ["React.js", "Next.js	", "TailwindCSS", "SpringBoot"],
-		},
-		{
-			skillName: "Database",
-			skillSet: ["PostgreSql", "MongoDb"],
-		},
-		{
-			skillName: "DevOps",
-			skillSet: ["Docker", "Git", "Github"],
-		},
-		{
-			skillName: "Operating System",
-			skillSet: ["Windows", "Linux"],
-		},
-	];
+	const data = useSectionData(title);
+
 	return (
 		<section className="flex w-screen text-center items-center p-10 justify-center">
 			<div className="flex flex-col justify-evenly gap-5">
 				{/* Animated Heading */}
-				<AnimatedSection>
-					<motion.h2
-						initial={{ opacity: 0, y: -30 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: -30 }}
-						transition={{
-							duration: 0.7,
-							ease: [0.25, 0.1, 0.25, 1.0],
-						}}
-						viewport={{ amount: 0.3, once: false }}>
-						{Array.from(title, (char, index) => (
-							<span key={index} className="heading">
-								{char}
-							</span>
-						))}
-					</motion.h2>
-				</AnimatedSection>
+				<SectionTitle title={title} />
 
 				{/* Grid with scroll-trigger animation */}
 				<AnimatedSection>
@@ -81,7 +47,7 @@ export default function Skill() {
 						whileInView="visible"
 						exit="exit"
 						viewport={{ amount: 0.3, once: false }}>
-						{content.map((value, index) => (
+						{data.map((value, index) => (
 							<motion.div key={index} variants={cardVariants}>
 								<SkillCard
 									className={lato.className}

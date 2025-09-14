@@ -1,0 +1,42 @@
+[
+	{
+		"title": "Programming Language",
+		"set": [
+			"Java",
+			"JavaScript",
+			"TypeScript",
+			"Python"
+		]
+	},
+	{
+		"title": "Web Development",
+		"set": [
+			"React.js",
+			"Next.js",
+			"TailwindCSS",
+			"SpringBoot"
+		]
+	},
+	{
+		"title": "Database",
+		"set": [
+			"PostgreSql",
+			"MongoDb"
+		]
+	},
+	{
+		"title": "DevOps",
+		"set": [
+			"Docker",
+			"Git",
+			"Github"
+		]
+	},
+	{
+		"title": "Operating System",
+		"set": [
+			"Windows",
+			"Linux"
+		]
+	}
+]

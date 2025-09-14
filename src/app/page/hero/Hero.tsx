@@ -1,9 +1,11 @@
 "use client";
 
+import "./Hero.css";
+import Hamburger from "@components/Menu";
+
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Poppins, Lato, Great_Vibes } from "next/font/google";
-import "./Hero.css";
 
 const nameArr = [
 	"Avinash",
@@ -73,6 +75,7 @@ export default function Hero() {
 				}}
 				animate="true"
 			/>
+			<div className="absolute top-0 right-0">{<Hamburger />}</div>
 
 			{/* Overlay */}
 			<motion.div

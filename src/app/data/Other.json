@@ -1,0 +1,20 @@
+[
+	{
+		"title": "AEON Custom Kernel",
+		"subtitle": "Samsung Exynos 7870",
+		"duration": "2017",
+		"detail": "AEON is a custom Linux kernel designed for Samsung devices with the Exynos 7870 chipset. It focuses on improving performance, optimizing battery life, and enabling advanced customization. This project highlights my experience in low-level system programming, kernel development, and hardware optimization, aimed at power users and developers."
+	},
+	{
+		"title": "Custom ROMs",
+		"subtitle": "Samsung Exynos 7870",
+		"duration": "2017",
+		"detail": "Ported custom ROMs to various Samsung devices, including Galaxy J7 Nxt, Neo, J6, and A3. Collaborated with other developers to port and maintain ROMs for the Exynos 7870 chipset. As part of the Android Moderation Community, I gained valuable experience in Android development and contributed by supporting and moderating community projects."
+	},
+	{
+		"title": "Group Management Bot",
+		"subtitle": "Telegram",
+		"duration": "2017",
+		"detail": "Maintained a Python-based Telegram bot using the Python Telegram Bot library, focused on group management and automating tasks like fetching resources from GitHub and providing update notifications. The bot helped reduce manual effort by delivering release updates and other important information directly to the group."
+	}
+]

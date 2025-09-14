@@ -32,13 +32,14 @@ export const handler: Handler = async (event) => {
 	if (event.httpMethod !== "POST") {
 		return {
 			statusCode: 405,
-			headers: corsHeaders,
-			body: "Method Not Allowed",
+			headers: { ...corsHeaders, "Content-Type": "application/json" },
+			body: JSON.stringify({ error: "Method Not Allowed" }),
 		};
 	}
 
+	const forwarded = event.headers["x-forwarded-for"];
 	const clientIP =
-		event.headers["x-forwarded-for"] ||
+		(forwarded ? forwarded.split(",")[0] : null) ||
 		event.headers["client-ip"] ||
 		event.headers["x-nf-client-connection-ip"] ||
 		"unknown";
@@ -54,7 +55,10 @@ export const handler: Handler = async (event) => {
 			if (ipStore[clientIP].count >= MAX_EMAILS_PER_HOUR) {
 				return {
 					statusCode: 429,
-					headers: corsHeaders,
+					headers: {
+						...corsHeaders,
+						"Content-Type": "application/json",
+					},
 					body: JSON.stringify({
 						error: "Rate limit exceeded: Max 3 emails per hour allowed.",
 					}),
@@ -74,7 +78,7 @@ export const handler: Handler = async (event) => {
 		if (!firstname || !email || !message) {
 			return {
 				statusCode: 400,
-				headers: corsHeaders,
+				headers: { ...corsHeaders, "Content-Type": "application/json" },
 				body: JSON.stringify({ error: "Missing required fields" }),
 			};
 		}
@@ -82,7 +86,7 @@ export const handler: Handler = async (event) => {
 		const transporter = nodemailer.createTransport({
 			host: process.env.SMTP_HOST,
 			port: Number(process.env.SMTP_PORT),
-			secure: true,
+			secure: Number(process.env.SMTP_PORT) === 465,
 			auth: {
 				user: process.env.SMTP_USER,
 				pass: process.env.SMTP_PASS,
@@ -90,10 +94,13 @@ export const handler: Handler = async (event) => {
 		});
 
 		await transporter.sendMail({
-			from: `"${firstname} ${lastname || ""}" <${email}>`,
+			from: process.env.SMTP_USER,
+			replyTo: email,
 			to: process.env.SMTP_TO,
-			subject: subject,
-			text: `${message} \n${email}`,
+			subject: subject || "New Contact Form Submission",
+			text: `Name: ${firstname} ${
+				lastname || ""
+			}\nEmail: ${email}\n\n${message}`,
 		});
 
 		return {
@@ -105,7 +112,7 @@ export const handler: Handler = async (event) => {
 		console.error("Error sending mail:", error);
 		return {
 			statusCode: 500,
-			headers: corsHeaders,
+			headers: { ...corsHeaders, "Content-Type": "application/json" },
 			body: JSON.stringify({ error: error.message || "Unknown error" }),
 		};
 	}

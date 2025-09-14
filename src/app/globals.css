@@ -60,3 +60,8 @@ input::placeholder,
 textarea::placeholder {
 	text-align: center;
 }
+
+.line {
+	width: full;
+	background-color: black;
+}

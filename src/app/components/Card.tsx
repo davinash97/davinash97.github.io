@@ -1,19 +1,10 @@
+import { CommonItem } from "app/types/Section";
+
 import { Lato } from "next/font/google";
 import React from "react";
-import { IconType } from "react-icons";
 import { IoIosLink } from "react-icons/io";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
-
-type Props = {
-	title: string;
-	subtitle: string;
-	duration: string;
-	detail: React.ReactNode;
-	className?: string;
-	link?: string; // The URL
-	linkIcon?: IconType; // Icon component
-};
 
 export default React.memo(function Card({
 	title,
@@ -23,7 +14,7 @@ export default React.memo(function Card({
 	className,
 	link,
 	linkIcon: LinkIcon = IoIosLink, // Default icon
-}: Props) {
+}: CommonItem) {
 	return (
 		<article
 			className={`max-w-md h-full justify-between flex flex-col gap-4 p-4 rounded-lg border border-gray-200 shadow-sm ${
