@@ -8,11 +8,12 @@ export default function ContactCard({
 	title,
 	image: Icon,
 	content,
+	link,
 }: ContactItem) {
-	return (
-		<div className="flex flex-row w-full gap-4 rounded-xl p-4 border-2 border-solid border-(--primary) items-center">
+	const data = (
+		<div className="flex flex-row w-full gap-4 rounded-xl p-4 border-2 border-solid border-[var(--primary)] items-center">
 			{/* Icon */}
-			<div className="h-[80px] w-[80px] flex items-center justify-center text-4xl text-(--primary)">
+			<div className="h-[80px] w-[80px] flex items-center justify-center text-4xl text-[var(--primary)]">
 				<Icon />
 			</div>
 
@@ -24,5 +25,12 @@ export default function ContactCard({
 				</div>
 			</div>
 		</div>
+	);
+	return link ? (
+		<a href={link} target="_blank" rel="noopener noreferrer">
+			{data}
+		</a>
+	) : (
+		data
 	);
 }

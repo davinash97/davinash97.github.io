@@ -10,7 +10,7 @@
 			"Dynamic routing to browse news by categories.",
 			"Deployed on Netlify for fast and reliable access."
 		],
-		"link": "https://global-buzz.netlify.app",
+		"link": "https://global-buzz.davinash97.xyz",
 		"techStack": [
 			"Next.js",
 			"TailwindCSS"
@@ -27,7 +27,7 @@
 			"Fully responsive design, works seamlessly across devices.",
 			"Lightweight codebase ensuring fast load times and performance."
 		],
-		"link": "https://davinash97.github.io/pass-gen",
+		"link": "https://pass-gen.davinash97.xyz",
 		"techStack": [
 			"HTML",
 			"CSS",

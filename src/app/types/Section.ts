@@ -40,6 +40,7 @@ export interface AchievementItem {
 
 export interface ContactItem {
 	title: string;
+	link?: string;
 	image: IconType;
 	content: React.ReactNode;
 }

@@ -17,33 +17,60 @@ import { SectionTitle } from "@hooks/useSectionData";
 const lato = Lato({ weight: "400", subsets: ["latin"] });
 
 export default function Contact() {
+	const dataArr = [
+		{
+			title: "Github",
+			link: "https://github.com/davinash97",
+			image: FaGithub,
+			content: "davinash97",
+		},
+		{
+			title: "LinkedIn",
+			link: "https://linkedin.com/in/davinash97",
+			image: SlSocialLinkedin,
+			content: "davinash97",
+		},
+		{
+			title: "Telegram",
+			link: "http://t.me/davinash1997",
+			image: PiTelegramLogo,
+			content: "davinash1997",
+		},
+		{
+			title: "Location",
+			image: CiLocationOn,
+			content: "Bangalore, KA, India",
+		},
+	];
 	const title = "Get into Touch";
 	const [loading, setLoading] = useState(false);
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		setLoading(true);
+		try {
+			e.preventDefault();
+			setLoading(true);
 
-		// Store reference BEFORE await!
-		const form = e.currentTarget;
+			// Store reference BEFORE await!
+			const form = e.currentTarget;
 
-		const formData = new FormData(form);
-		const data = Object.fromEntries(formData.entries());
+			const formData = new FormData(form);
+			const data = Object.fromEntries(formData.entries());
 
-		const res = await fetch("/.netlify/functions/sendMail", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		});
+			const res = await fetch("/.netlify/functions/sendMail", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			});
 
-		setLoading(false);
-
-		if (res.ok) {
-			alert("Email sent!");
-			form.reset();
-		} else {
-			alert("Something went wrong.");
+			if (res.ok) {
+				alert("Email sent!");
+				form.reset();
+			} else {
+				alert("Something went wrong.");
+			}
+		} finally {
+			setLoading(false);
 		}
 	};
 	return (
@@ -61,45 +88,9 @@ export default function Contact() {
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}>
-						<a
-							href="https://github.com/davinash97"
-							target="_blank"
-							rel="noopener noreferrer">
-							<ContactCard
-								title="Github"
-								image={FaGithub}
-								content="davinash97"
-							/>
-						</a>
-						<a
-							href="https://linkedin.com/in/davinash97"
-							target="_blank"
-							rel="noopener noreferrer">
-							<ContactCard
-								title="LinkedIn"
-								image={SlSocialLinkedin}
-								content="davinash97"
-							/>
-						</a>
-						<a
-							href="http://t.me/davinash1997"
-							target="_blank"
-							rel="noopener noreferrer">
-							<ContactCard
-								title="Telegram"
-								image={PiTelegramLogo}
-								content="davinash1997"
-							/>
-						</a>
-						<ContactCard
-							title="Location"
-							image={CiLocationOn}
-							content={
-								<span className="no-anim">
-									Bangalore, KA, India
-								</span>
-							}
-						/>
+						{dataArr.map((value, index) => (
+							<ContactCard key={index} {...value} />
+						))}
 					</motion.div>
 					<AnimatedSection>
 						{/* Contact form */}
@@ -115,13 +106,20 @@ export default function Contact() {
 								delay: 0.2,
 							}}>
 							<div className="flex flex-col md:flex-row gap-3 w-full min-w-0">
-								<input
+								{/* <input
 									type="text"
 									name="firstname"
 									id="firstname"
 									placeholder="Firstname"
 									className={`flex-1 min-w-0 ${lato.className} p-2 border rounded`}
 									required
+								/> */}
+								<Input
+									type="text"
+									name="firstname"
+									placeholder="Firstname"
+									className={`flex-1 min-w-0 ${lato.className} p-2 border rounded`}
+									required={true}
 								/>
 								<input
 									type="text"
@@ -156,7 +154,11 @@ export default function Contact() {
 							/>
 							<button
 								type="submit"
-								className="self-end px-6 py-2 bg-(--primary) text-(--background) rounded-md hover:bg-gray-800 hover:cursor-pointer transition"
+								className={`self-end px-6 py-2 ${
+									loading
+										? "bg-gray-400 text-black"
+										: "bg-(--primary) text-(--background) hover:bg-gray-800 hover:cursor-pointer"
+								} rounded-md transition`}
 								disabled={loading}>
 								{/* Send */}
 								{loading ? "Sending..." : "Send"}
@@ -166,5 +168,34 @@ export default function Contact() {
 				</div>
 			</AnimatedSection>
 		</section>
+	);
+}
+
+type InputTypes = {
+	name: string;
+	type: string;
+	id?: string;
+	className?: string;
+	placeholder: string;
+	required?: boolean;
+};
+
+function Input({
+	name,
+	type,
+	id,
+	className,
+	placeholder,
+	required,
+}: InputTypes) {
+	return (
+		<input
+			name={name}
+			type={type}
+			id={id || name}
+			placeholder={placeholder || name}
+			className={`${lato.className} ${className}`}
+			required={required || true}
+		/>
 	);
 }
