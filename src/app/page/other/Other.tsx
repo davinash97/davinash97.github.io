@@ -36,13 +36,7 @@ export default function Other() {
 					exit="exit"
 					viewport={{ amount: 0.3, once: false }}>
 					{data.map((item, index) => (
-						<motion.div
-							variants={cardVariants}
-							whileHover={{
-								scale: 1.02,
-								boxShadow: "0 8px 15px rgba(0, 0, 0, 0.15)",
-							}}
-							key={index}>
+						<motion.div variants={cardVariants} key={index}>
 							<Card {...item} />
 						</motion.div>
 					))}

@@ -87,7 +87,7 @@ export default function Hero() {
 				}}>
 				{/* Heading with stagger */}
 				<motion.h1
-					className={`text-3xl md:text-6xl lg:text-6xl xl:text-8xl break-words p-6 text-(--primary) ${poppins.className}`}>
+					className={`text-6xl xl:text-8xl break-words p-6 text-(--primary) ${poppins.className}`}>
 					{"Welcome to my Portfolio".split(" ").map((word, i) => (
 						<motion.span
 							key={i}
@@ -106,7 +106,7 @@ export default function Hero() {
 
 				{/* Subheading */}
 				<motion.h3
-					className={`text-2xl md:text-3xl lg:text-3xl xl:text-6xl break-words p-6 ${lato.className}`}
+					className={`text-3xl xl:text-6xl break-words p-6 ${lato.className}`}
 					onMouseEnter={() => setHovered(true)}
 					onMouseLeave={() => setHovered(false)}>
 					I am{" "}
@@ -122,7 +122,7 @@ export default function Hero() {
 
 				{/* Scroll indicator */}
 				<motion.div
-					className="absolute bottom-6 animate-bounce text-lg opacity-80"
+					className="absolute bottom-6 animate-bounce text-base opacity-80"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 1 }}>

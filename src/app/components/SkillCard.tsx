@@ -1,21 +1,31 @@
 import { SkillItem } from "app/types/Section";
 
-import { Lato } from "next/font/google";
+import { motion } from "framer-motion";
+import { Fira_Sans, Roboto_Slab } from "next/font/google";
 
-const lato = Lato({ weight: "400", subsets: ["latin"] });
+const roboto = Roboto_Slab({ preload: false });
+const fira = Fira_Sans({ weight: "300", preload: false });
 
 export default function SkillCard({ title, set, className }: SkillItem) {
 	return (
-		<article
-			className={`flex flex-col text-left p-10 border-2 rounded-lg 
-						hover:shadow-2xl hover:shadow-black/40 transition duration-200 
-						cursor-pointer max-w-sm w-full h-full ${lato.className} ${className || ""}`}>
-			<h3 className="text-xl font-semibold">{title}</h3>
-			<ul className="mt-3 list-disc list-inside space-y-1">
+		<motion.article
+			className={`flex flex-col text-left p-10 rounded-lg 
+						transition duration-200 cursor-pointer max-w-sm w-full h-full ${
+							roboto.className
+						} ${className || ""} border border-gray-200`}
+			initial={{ boxShadow: "0 5px 5px rgba(0,0,0,0.10)" }}
+			whileHover={{
+				boxShadow: "0 8px 15px rgba(0,0,0,0.25)",
+				transition: { duration: 0 },
+			}}
+			transition={{ duration: 0.1 }}>
+			<h3 className={`text-xl ${roboto.className}`}>{title}</h3>
+			<ul
+				className={`mt-3 list-disc list-inside space-y-1 ${fira.className}`}>
 				{set.map((skill, index) => (
 					<li key={index}>{skill}</li>
 				))}
 			</ul>
-		</article>
+		</motion.article>
 	);
 }

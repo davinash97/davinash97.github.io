@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { SectionType, SectionDataMap } from "../types/Section";
 import { motion } from "framer-motion";
 import AnimatedSection from "@components/AnimatedSection";
+import { Lexend_Deca } from "next/font/google";
+
+const lex_deca = Lexend_Deca({ preload: false });
 
 export function SectionTitle({ title }: { title: string }) {
 	return (
 		<AnimatedSection>
 			<motion.h2
-				className="w-full flex flex-row justify-center items-center cursor-pointer"
+				className={`w-full flex flex-row justify-center items-center cursor-pointer ${lex_deca.className}`}
 				initial={{ opacity: 0, y: -50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				exit={{ opacity: 0, y: -50 }}

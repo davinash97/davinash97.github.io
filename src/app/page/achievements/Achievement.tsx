@@ -39,13 +39,7 @@ export default function Achievement() {
 					exit="exit"
 					viewport={{ amount: 0.1, once: false }}>
 					{data.map((item, index) => (
-						<motion.div
-							variants={cardVariants}
-							whileHover={{
-								scale: 1.02,
-								boxShadow: "0 8px 15px rgba(0, 0, 0, 0.15)",
-							}}
-							key={index}>
+						<motion.div variants={cardVariants} key={index}>
 							<Card {...item} />
 						</motion.div>
 					))}
@@ -54,3 +48,5 @@ export default function Achievement() {
 		</section>
 	);
 }
+
+/*hover:shadow-2xl hover:shadow-black/40 */
