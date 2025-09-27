@@ -3,8 +3,8 @@ import { ContactItem } from "app/types/Section";
 import { motion } from "framer-motion";
 import { Fira_Sans, Roboto_Slab } from "next/font/google";
 
-const roboto = Roboto_Slab();
-const fira = Fira_Sans({ weight: "300" });
+const roboto = Roboto_Slab({ preload: false });
+const fira = Fira_Sans({ weight: "300", preload: false });
 
 export default function ContactCard({
 	title,

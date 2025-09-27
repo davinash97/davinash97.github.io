@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import AnimatedSection from "@components/AnimatedSection";
 import { Lexend_Deca } from "next/font/google";
 
-const lex_deca = Lexend_Deca();
+const lex_deca = Lexend_Deca({ preload: false });
 
 export function SectionTitle({ title }: { title: string }) {
 	return (

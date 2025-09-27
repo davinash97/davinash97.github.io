@@ -6,8 +6,8 @@ import { Fira_Sans, Roboto_Slab } from "next/font/google";
 import Image from "next/image";
 import { IoIosLink } from "react-icons/io";
 
-const roboto = Roboto_Slab();
-const fira = Fira_Sans({ weight: "300" });
+const roboto = Roboto_Slab({ preload: false });
+const fira = Fira_Sans({ weight: "300", preload: false });
 
 export default function ProjectCard({
 	title,

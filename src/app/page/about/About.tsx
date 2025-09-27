@@ -6,7 +6,7 @@ import { SectionTitle } from "@hooks/useSectionData";
 import { motion } from "framer-motion";
 import { Fira_Sans } from "next/font/google";
 
-const fira = Fira_Sans({ weight: "300" });
+const fira = Fira_Sans({ weight: "300", preload: false });
 
 export default function About() {
 	const title = "About me";

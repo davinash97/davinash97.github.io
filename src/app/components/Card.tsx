@@ -5,9 +5,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { IoIosLink } from "react-icons/io";
 
-const roboto = Roboto_Slab();
-const fira = Fira_Sans({ weight: "300" });
-const monsterrat = Montserrat();
+const roboto = Roboto_Slab({ preload: false });
+const fira = Fira_Sans({ weight: "300", preload: false });
+const monsterrat = Montserrat({ preload: false });
 
 export default React.memo(function Card({
 	title,

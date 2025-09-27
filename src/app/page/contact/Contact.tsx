@@ -14,7 +14,7 @@ import { SlSocialLinkedin } from "react-icons/sl";
 import { FaGithub } from "react-icons/fa6";
 import { SectionTitle } from "@hooks/useSectionData";
 
-const roboto = Fira_Sans({ weight: "300" });
+const roboto = Fira_Sans({ weight: "300", preload: false });
 
 export default function Contact() {
 	const dataArr = [
