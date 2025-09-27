@@ -1,10 +1,13 @@
 import { ProjectItem } from "app/types/Section";
 
-import { Lato } from "next/font/google";
+import { motion } from "framer-motion";
+
+import { Fira_Sans, Roboto_Slab } from "next/font/google";
 import Image from "next/image";
 import { IoIosLink } from "react-icons/io";
 
-const lato = Lato({ weight: "400", subsets: ["latin"] });
+const roboto = Roboto_Slab();
+const fira = Fira_Sans({ weight: "300" });
 
 export default function ProjectCard({
 	title,
@@ -17,10 +20,16 @@ export default function ProjectCard({
 	linkIcon: LinkIcon = IoIosLink,
 }: ProjectItem) {
 	return (
-		<div
-			className={`flex flex-col gap-5 w-full h-full max-w-md items-center justify-between border-2 rounded-xl p-5 ${
+		<motion.div
+			className={`flex flex-col gap-5 w-full h-full max-w-md items-center justify-between rounded-xl p-5 border border-gray-200 ${
 				className || ""
-			}`}>
+			}`}
+			initial={{ boxShadow: "0 5px 5px rgba(0,0,0,0.10)" }}
+			whileHover={{
+				boxShadow: "0 8px 15px rgba(0,0,0,0.25)",
+				transition: { duration: 0 },
+			}}
+			transition={{ duration: 0.1 }}>
 			<div className="relative flex flex-col h-[200px] w-[300px]">
 				<Image
 					src={image || "https://dummyimage.com/600x400/000/fff"}
@@ -30,13 +39,14 @@ export default function ProjectCard({
 					draggable="false"
 					className="w-full h-full select-none object-cover rounded-md"
 				/>
-				<h3 className="absolute font-bold text-lg z-10 w-full bottom-1 text-center text-(--accent) bg-(--secondary)">
+				<h3
+					className={`absolute font-bold text-lg z-10 w-full bottom-1 text-center text-(--accent) bg-(--secondary) ${roboto.className}`}>
 					{title || "This is a dummy project name"}
 				</h3>
 			</div>
 
 			<div
-				className={`flex flex-col gap-3 w-full max-w-sm justify-between ${lato.className}`}>
+				className={`flex flex-col gap-3 w-full max-w-sm justify-between ${fira.className}`}>
 				<p className="text-justify">{detail}</p>
 				<ol className="list-decimal list-inside flex flex-col gap-1">
 					{points.map((point, index) => (
@@ -66,6 +76,6 @@ export default function ProjectCard({
 					<LinkIcon className="mr-1" /> Visit
 				</a>
 			</div>
-		</div>
+		</motion.div>
 	);
 }

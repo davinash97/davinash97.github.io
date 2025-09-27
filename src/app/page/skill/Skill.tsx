@@ -4,10 +4,7 @@ import SkillCard from "@components/SkillCard";
 import AnimatedSection from "@components/AnimatedSection";
 import { SectionTitle, useSectionData } from "@hooks/useSectionData";
 
-import { Lato } from "next/font/google";
 import { motion, Variants } from "framer-motion";
-
-const lato = Lato({ weight: "400", subsets: ["latin"] });
 
 const containerVariants: Variants = {
 	hidden: { opacity: 0 },
@@ -49,10 +46,7 @@ export default function Skill() {
 						viewport={{ amount: 0.3, once: false }}>
 						{data.map((value, index) => (
 							<motion.div key={index} variants={cardVariants}>
-								<SkillCard
-									className={lato.className}
-									{...value}
-								/>
+								<SkillCard {...value} />
 							</motion.div>
 						))}
 					</motion.div>

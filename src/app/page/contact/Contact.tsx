@@ -6,7 +6,7 @@ import ContactCard from "@components/ContactCard";
 import AnimatedSection from "@components/AnimatedSection";
 
 import { motion } from "framer-motion";
-import { Lato } from "next/font/google";
+import { Fira_Sans } from "next/font/google";
 import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { PiTelegramLogo } from "react-icons/pi";
@@ -14,7 +14,7 @@ import { SlSocialLinkedin } from "react-icons/sl";
 import { FaGithub } from "react-icons/fa6";
 import { SectionTitle } from "@hooks/useSectionData";
 
-const lato = Lato({ weight: "400", subsets: ["latin"] });
+const roboto = Fira_Sans({ weight: "300" });
 
 export default function Contact() {
 	const dataArr = [
@@ -95,7 +95,7 @@ export default function Contact() {
 					<AnimatedSection>
 						{/* Contact form */}
 						<motion.form
-							className="flex flex-col max-w-full p-0 gap-4 order-1 lg:order-2"
+							className={`flex flex-col max-w-full p-0 gap-4 order-1 lg:order-2 ${roboto.className}`}
 							onSubmit={handleSubmit}
 							initial={{ opacity: 0, x: 60 }}
 							whileInView={{ opacity: 1, x: 0 }}
@@ -118,7 +118,7 @@ export default function Contact() {
 									type="text"
 									name="firstname"
 									placeholder="Firstname"
-									className={`flex-1 min-w-0 ${lato.className} p-2 border rounded`}
+									className={`flex-1 min-w-0 p-2 border rounded`}
 									required={true}
 								/>
 								<input
@@ -126,7 +126,7 @@ export default function Contact() {
 									name="lastname"
 									id="lastname"
 									placeholder="Lastname"
-									className={`flex-1 min-w-0 ${lato.className} p-2 border rounded`}
+									className={`flex-1 min-w-0 p-2 border rounded`}
 								/>
 							</div>
 
@@ -135,7 +135,6 @@ export default function Contact() {
 								name="email"
 								id="email"
 								placeholder="Email"
-								className={` ${lato.className}`}
 								required
 							/>
 							<input
@@ -143,13 +142,12 @@ export default function Contact() {
 								name="subject"
 								id="subject"
 								placeholder="Subject"
-								className={` ${lato.className}`}
 							/>
 							<textarea
 								name="message"
 								id="message"
 								placeholder="Message"
-								className={` h-32 p-2 ${lato.className}`}
+								className={` h-32 p-2`}
 								required
 							/>
 							<button
@@ -194,7 +192,7 @@ function Input({
 			type={type}
 			id={id || name}
 			placeholder={placeholder || name}
-			className={`${lato.className} ${className}`}
+			className={`${roboto.className} ${className}`}
 			required={required || true}
 		/>
 	);
