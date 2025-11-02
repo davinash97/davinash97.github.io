@@ -10,7 +10,7 @@
 			"Dynamic routing to browse news by categories.",
 			"Deployed on Netlify for fast and reliable access."
 		],
-		"link": "https://global-buzz.davinash97.xyz",
+		"link": "https://globalbuzz.davinash97.xyz",
 		"techStack": [
 			"Next.js",
 			"TailwindCSS"
