@@ -44,6 +44,11 @@ export default function Contact() {
 	];
 	const title = "Get into Touch";
 	const [loading, setLoading] = useState(false);
+	const [status, setStatus] = useState<{
+		message: string;
+		type: "success" | "error";
+	} | null>(null);
+
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		try {
 			e.preventDefault();
@@ -64,11 +69,16 @@ export default function Contact() {
 			});
 
 			if (res.ok) {
-				alert("Email sent!");
+				setStatus({ message: "Email sent successfully!", type: "success" });
 				form.reset();
 			} else {
-				alert("Something went wrong.");
+				setStatus({
+					message: "Something went wrong. Please try again.",
+					type: "error",
+				});
 			}
+		} catch {
+			setStatus({ message: "Error sending email.", type: "error" });
 		} finally {
 			setLoading(false);
 		}
@@ -106,14 +116,7 @@ export default function Contact() {
 								delay: 0.2,
 							}}>
 							<div className="flex flex-col md:flex-row gap-3 w-full min-w-0">
-								{/* <input
-									type="text"
-									name="firstname"
-									id="firstname"
-									placeholder="Firstname"
-									className={`flex-1 min-w-0 ${lato.className} p-2 border rounded`}
-									required
-								/> */}
+								{/* Firstname Input */}
 								<Input
 									type="text"
 									name="firstname"
@@ -152,15 +155,22 @@ export default function Contact() {
 							/>
 							<button
 								type="submit"
-								className={`self-end px-6 py-2 ${
-									loading
-										? "bg-gray-400 text-black"
-										: "bg-(--primary) text-(--background) hover:bg-gray-800 hover:cursor-pointer"
-								} rounded-md transition`}
+								className={`self-end px-6 py-2 ${loading
+									? "bg-gray-400 text-black"
+									: "bg-(--primary) text-(--background) hover:bg-gray-800 hover:cursor-pointer"
+									} rounded-md transition`}
 								disabled={loading}>
-								{/* Send */}
 								{loading ? "Sending..." : "Send"}
 							</button>
+							{status && (
+								<p
+									className={`text-center mt-2 ${status.type === "success"
+										? "text-green-600"
+										: "text-red-600"
+										}`}>
+									{status.message}
+								</p>
+							)}
 						</motion.form>
 					</AnimatedSection>
 				</div>
@@ -193,7 +203,7 @@ function Input({
 			id={id || name}
 			placeholder={placeholder || name}
 			className={`${roboto.className} ${className}`}
-			required={required || true}
+			required={required}
 		/>
 	);
 }

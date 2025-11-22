@@ -2,7 +2,7 @@ import type { Handler } from "@netlify/functions";
 import nodemailer from "nodemailer";
 
 const corsHeaders = {
-	"Access-Control-Allow-Origin": "*",
+	"Access-Control-Allow-Origin": `https://davinash97.xyz`,
 	"Access-Control-Allow-Methods": "POST, OPTIONS",
 	"Access-Control-Allow-Headers": "Content-Type",
 };
@@ -98,9 +98,10 @@ export const handler: Handler = async (event) => {
 			replyTo: email,
 			to: process.env.SMTP_TO,
 			subject: subject || "New Contact Form Submission",
-			text: `Name: ${firstname} ${
-				lastname || ""
-			}\nEmail: ${email}\n\n${message}`,
+			text: `Name: ${firstname} ${lastname || ""}\n
+			Email: ${email}\n
+			Message: ${message}\n
+			Sent from: ${clientIP} from Portfolio`,
 		});
 
 		return {
