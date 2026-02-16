@@ -2,9 +2,9 @@ onmessage = async (event) => {
 	const { type } = event.data;
 
 	try {
-		const module = await import(`@data/${type}.json`);
-		postMessage({ type, data: module.default });
-	} catch (err) {
+		const importedModule = await import(`@data/${type}.json`);
+		postMessage({ type, data: importedModule.default });
+	} catch {
 		postMessage({ type, data: [] });
 	}
 };
