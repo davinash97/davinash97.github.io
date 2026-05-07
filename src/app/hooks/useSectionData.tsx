@@ -13,12 +13,11 @@ export function SectionTitle({ title }: { title: string }) {
 				className={`w-full flex flex-row justify-center items-center cursor-pointer ${lex_deca.className}`}
 				initial={{ opacity: 0, y: -50 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				exit={{ opacity: 0, y: -50 }}
 				transition={{
 					duration: 0.8,
 					ease: [0.25, 0.1, 0.25, 1.0],
 				}}
-				viewport={{ amount: 0.3, once: false }}>
+				viewport={{ amount: 0.3, once: true }}>
 				{Array.from(title, (char, index) => (
 					<span key={index} className="heading">
 						{char}
