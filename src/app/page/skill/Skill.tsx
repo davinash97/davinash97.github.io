@@ -12,11 +12,11 @@ export default function Skill() {
 	const data = useSectionData(title);
 	if (!data || data.length === 0) return null;
 
-	return (
-		<section className="flex w-screen text-center items-center p-10 justify-center">
-			<div className="flex flex-col justify-evenly gap-5">
-				{/* Animated Heading */}
-				<SectionTitle title={title} />
+    return (
+        <section className="flex w-screen text-center items-center p-10 justify-center">
+            <div className="flex flex-col justify-evenly gap-5">
+                {/* Animated Heading */}
+                <SectionTitle title={title} />
 
 				{/* Grid with scroll-trigger animation */}
 				<AnimatedSection>

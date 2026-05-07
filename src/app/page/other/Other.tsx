@@ -4,8 +4,8 @@ import Card from "@components/Card";
 import { easeInOut, motion, Variants } from "framer-motion";
 
 const containerVariants: Variants = {
-	hidden: {},
-	visible: { transition: { staggerChildren: 0.4 } },
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.4 } },
 };
 
 const cardVariants: Variants = {
@@ -19,8 +19,8 @@ const cardVariants: Variants = {
 };
 
 export default function Other() {
-	const title = "Other";
-	const data = useSectionData(title);
+    const title = "Other";
+    const data = useSectionData(title);
 
 	if (!data || data.length === 0) return null;
 

@@ -10,9 +10,9 @@ export default function Achievement() {
 	const data = useSectionData(title);
 	if (!data || data.length === 0) return null;
 
-	return (
-		<section className="flex flex-col p-10 gap-10 justify-center items-center">
-			<SectionTitle title={title} />
+    return (
+        <section className="flex flex-col p-10 gap-10 justify-center items-center">
+            <SectionTitle title={title} />
 
 			<AnimatedSection>
 				<motion.div
