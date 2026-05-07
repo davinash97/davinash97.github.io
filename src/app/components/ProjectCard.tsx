@@ -35,6 +35,7 @@ export default function ProjectCard({
 					src={image || "https://dummyimage.com/600x400/000/fff"}
 					alt={`image of ${title?.trim() || "dummy project"}`}
 					fill={true}
+					sizes="500px"
 					loading="lazy"
 					draggable="false"
 					className="w-full h-full select-none object-cover rounded-md"

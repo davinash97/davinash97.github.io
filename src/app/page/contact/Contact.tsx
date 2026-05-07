@@ -96,7 +96,7 @@ export default function Contact() {
 						className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full order-2 lg:order-1"
 						initial={{ opacity: 0, x: -60 }}
 						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ amount: 0.3 }}
+						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}>
 						{dataArr.map((value, index) => (
 							<ContactCard key={index} {...value} />
@@ -109,7 +109,7 @@ export default function Contact() {
 							onSubmit={handleSubmit}
 							initial={{ opacity: 0, x: 60 }}
 							whileInView={{ opacity: 1, x: 0 }}
-							viewport={{ amount: 0.3 }}
+							viewport={{ once: true, amount: 0.3 }}
 							transition={{
 								duration: 0.8,
 								ease: "easeOut",
