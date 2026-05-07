@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
 			},
 		],
 	},
+	turbopack: {
+		root: path.join(__dirname, '..'),
+	},
 	webpack: (config) => {
 		config.resolve.alias["@data"] = path.join(__dirname, "src/app/data");
 		return config;
