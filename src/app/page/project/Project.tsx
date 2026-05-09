@@ -21,7 +21,7 @@ export default function Project() {
 			{/* Projects Grid */}
 			<AnimatedSection>
 				<motion.div
-					className="grid grid-cols-1 xl:grid-cols-2 gap-6 w-full max-w-6xl mx-auto justify-items-center"
+					className="grid grid-cols-1 xl:grid-cols-2 gap-6 w-full max-w-6xl mx-auto justify-evenly place-items-start"
 					variants={ContainerVariants}
 					initial="hidden"
 					whileInView="visible"

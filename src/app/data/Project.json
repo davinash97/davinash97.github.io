@@ -1,5 +1,23 @@
 [
 	{
+		"title": "Password Generator",
+		"image": "/assets/pass-gen.jpg",
+		"details": "Pass-Gen is a lightweight, browser-based password generator built using pure HTML, CSS, and Vanilla JavaScript. It provides users with the ability to generate strong random passwords instantly without relying on any external frameworks or libraries.",
+		"points": [
+			"Generates secure, random passwords with configurable options.",
+			"Simple, intuitive user interface for ease of use.",
+			"Copy-to-clipboard functionality for quick password usage.",
+			"Fully responsive design, works seamlessly across devices.",
+			"Lightweight codebase ensuring fast load times and performance."
+		],
+		"link": "https://pass-gen.davinash97.xyz",
+		"techStack": [
+			"HTML",
+			"CSS",
+			"JavaScript"
+		]
+	},
+	{
 		"title": "Global Buzz",
 		"image": "/assets/global-buzz.jpg",
 		"details": "GlobalBuzz is a dynamic news web application built with Next.js, Tailwind CSS, and integrated with NewsAPI to fetch real-time news articles from various sources. The platform provides users with the latest news across multiple categories in a fast, responsive, and modern interface.",
@@ -17,21 +35,22 @@
 		]
 	},
 	{
-		"title": "Password Generator",
-		"image": "/assets/pass-gen.jpg",
-		"details": "Pass-Gen is a lightweight, browser-based password generator built using pure HTML, CSS, and Vanilla JavaScript. It provides users with the ability to generate strong random passwords instantly without relying on any external frameworks or libraries.",
+		"title": "Portfolio",
+		"image": "/assets/portfolio.png",
+		"details": "A Portfolio to showcase my project, skills, achievements, and ways to contact me.",
 		"points": [
-			"Generates secure, random passwords with configurable options.",
-			"Simple, intuitive user interface for ease of use.",
-			"Copy-to-clipboard functionality for quick password usage.",
-			"Fully responsive design, works seamlessly across devices.",
-			"Lightweight codebase ensuring fast load times and performance."
+			"Followed the good old DRY principle and kept the codebase clean with reusable components",
+			"Used TypeScript, Next.js, TailwindCSS, and a sprinkle of Framer Motion for a smooth modern experience",
+			"Kept data separate from the UI and offloaded heavy loading tasks to a Web Worker for better performance",
+			"Added thoughtful touches like auto Day/Night mode, HTTPS with SSL/TLS, and a working contact form with rate limiting",
+			"Deployed on Netlify with clean naming conventions and maintainable structure so future me doesn’t suffer"
 		],
-		"link": "https://pass-gen.davinash97.xyz",
+		"link": "#",
 		"techStack": [
-			"HTML",
-			"CSS",
-			"JavaScript"
+			"Next.js",
+			"TailwindCSS",
+			"Netlify Functions",
+			"Nodemailer"
 		]
 	}
 ]

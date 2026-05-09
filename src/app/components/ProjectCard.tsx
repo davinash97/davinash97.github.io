@@ -21,9 +21,8 @@ export default function ProjectCard({
 }: ProjectItem) {
 	return (
 		<motion.div
-			className={`flex flex-col gap-5 w-full h-full max-w-md items-center justify-between rounded-xl p-5 border border-gray-200 ${
-				className || ""
-			}`}
+			className={`flex flex-col gap-5 h-full wrap-break-word max-w-md items-center justify-between rounded-xl p-5 border border-gray-200 ${className || ""
+				}`}
 			initial={{ boxShadow: "0 5px 5px rgba(0,0,0,0.10)" }}
 			whileHover={{
 				boxShadow: "0 8px 15px rgba(0,0,0,0.25)",
@@ -47,7 +46,7 @@ export default function ProjectCard({
 			</div>
 
 			<div
-				className={`flex flex-col gap-3 w-full max-w-sm justify-between ${fira.className}`}>
+				className={`flex flex-col gap-3 w-full max-w-md justify-between ${fira.className}`}>
 				<p className="text-justify">{detail}</p>
 				<ol className="list-decimal list-inside flex flex-col gap-1">
 					{points.map((point, index) => (
@@ -58,24 +57,26 @@ export default function ProjectCard({
 				</ol>
 			</div>
 
-			<div className="w-full flex flex-row justify-between items-center">
-				<div className="flex flex-row flex-wrap gap-1 text-left">
+			<div className="w-full h-full flex justify-between gap-4 items-center">
+				<div className="w-full h-full flex flex-wrap gap-1 text-center justify-start items-center">
 					{techStack.map((tech, index) => (
 						<span
 							key={index}
-							className="text-sm rounded-full px-2 py-1 text-(--background) bg-(--secondary)">
+							className="text-sm rounded-full px-4 py-2 text-(--background) bg-(--secondary)">
 							{tech}
 						</span>
 					))}
 				</div>
 
-				<a
-					className="flex items-center text-right text-purple-500"
-					rel="noopener noreferrer"
-					href={link}
-					target="_blank">
-					<LinkIcon className="mr-1" /> Visit
-				</a>
+				<div className="flex justify-center items-center">
+					<a
+						className="flex items-center text-right text-purple-500"
+						rel="noopener noreferrer"
+						href={link}
+						target="_blank">
+						<LinkIcon className="mr-1" /> Visit
+					</a>
+				</div>
 			</div>
 		</motion.div>
 	);
