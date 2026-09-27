@@ -5,20 +5,22 @@
 }
 
 :root {
-	--primary: #6b46c1;
+	--primary: #96e6ff;
 	--secondary: #805ad5;
 	--accent: #d6bcfa;
 	--foreground: #1a202c;
 	--background: #f7fafc;
+	--filter-brightness: 60%;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--primary: #9f7aea;
+		--primary: #dcea7a;
 		--secondary: #805ad5;
 		--accent: #6b46c1;
 		--foreground: #edf2f7;
 		--background: #1a202c;
+		--filter-brightness: 50%;
 	}
 }
 
