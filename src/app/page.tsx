@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 
 import Loading from "./components/Loading";
 
@@ -15,15 +15,6 @@ import Achievement from "./page/achievements/Achievement";
 import Other from "./page/other/Other";
 
 export default function Home() {
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		const timer = setTimeout(() => setLoading(false), 500);
-		return () => clearTimeout(timer);
-	}, []);
-
-	if (loading) return <Loading />;
-
 	return (
 		<>
 			<Suspense fallback={<Loading />}>

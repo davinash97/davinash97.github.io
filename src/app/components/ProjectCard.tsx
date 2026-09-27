@@ -29,7 +29,7 @@ export default function ProjectCard({
 				transition: { duration: 0 },
 			}}
 			transition={{ duration: 0.1 }}>
-			<div className="relative flex flex-col h-[200px] w-[300px]">
+			<div className="relative flex flex-col h-50 w-75">
 				<Image
 					src={image || "https://dummyimage.com/600x400/000/fff"}
 					alt={`image of ${title?.trim() || "dummy project"}`}

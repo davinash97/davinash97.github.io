@@ -18,7 +18,7 @@ export default function About() {
 
 	return (
 		<section
-			className="flex flex-col w-full min-h-[60dvh] text-center items-center gap-5 overflow-x-hidden xl:px-60"
+			className="flex flex-col w-full min-h-screen justify-center text-center items-center gap-5 overflow-x-hidden xl:px-60"
 		>
 			<SectionTitle title={title} />
 
