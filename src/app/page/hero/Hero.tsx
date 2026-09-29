@@ -5,7 +5,7 @@ import Hamburger from "@components/Menu";
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Poppins, Lato, Great_Vibes } from "next/font/google";
+import { Poppins, Lato, Great_Vibes, Raleway } from "next/font/google";
 
 const nameArr = [
 	"Avinash",
@@ -14,8 +14,8 @@ const nameArr = [
 	"a Tech enthusiast",
 ];
 
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 const lato = Lato({ weight: "400", subsets: ["latin"] });
+const sans = Raleway({ weight: "400", subsets: ["latin"] });
 const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
 
 export default function Hero() {
@@ -66,15 +66,16 @@ export default function Hero() {
 
 	return (
 		<section className="relative h-screen w-screen m-0 p-0">
-			{/* GPU-friendly animated gradient background */}
 			<motion.div
-				className="absolute top-0 left-0 w-full h-full animate-gradient-x"
+				className="absolute top-0 left-0 w-full h-full brightness-(--filter-brightness) bg-cover bg-center bg-no-repeat"
 				style={{
 					opacity,
 					transform: `translateY(${translateY}px)`,
+					backgroundImage: 'url("assets/heroBg.jpg")',
 				}}
 				animate="true"
 			/>
+
 			<div className="absolute top-0 right-0">{<Hamburger />}</div>
 
 			{/* Overlay */}
@@ -84,29 +85,38 @@ export default function Hero() {
 					opacity,
 					transform: `translateY(${translateY}px)`,
 					transition: "opacity 0.1s linear, transform 0.1s linear",
+					backdropFilter: "blur(1.5px)",
 				}}>
 				{/* Heading with stagger */}
-				<motion.h1
-					className={`text-6xl xl:text-8xl break-words p-6 text-(--primary) ${poppins.className}`}>
-					{"Welcome to my Portfolio".split(" ").map((word, i) => (
-						<motion.span
-							key={i}
-							custom={i}
-							variants={headingVariants}
-							initial="hidden"
-							animate="visible"
-							className="inline-block mr-2"
-							style={{
-								WebkitTextStroke: "1px black",
-							}}>
-							{word}
-						</motion.span>
-					))}
-				</motion.h1>
+				<div
+					className={`${sans.className} xl:leading-25 wrap-break-words text-(--primary)`}
+					style={{
+						width: "fit-content",
+						padding: "100px",
+					}}>
+					<div className="text-left">
+						<motion.h1 className="xl:text-[150px] text-[80px]">
+							<b>W</b>
+							<span className="">elcome</span>
+						</motion.h1>
+					</div>
+					<div className="text-right">
+						<motion.h1 className="xl:text-[50px] text-[30px]">
+							<b>t</b>
+							<span className="">o my</span>
+						</motion.h1>
+					</div>
+					<div className="text-left">
+						<motion.h1 className="xl:text-[90px] text-[50px]">
+							<b>P</b>
+							<span className="">ortfolio</span>
+						</motion.h1>
+					</div>
+				</div>
 
 				{/* Subheading */}
 				<motion.h3
-					className={`text-3xl xl:text-6xl break-words p-6 ${lato.className}`}
+					className={`text-3xl xl:text-6xl wrap-break-words p-6 ${lato.className}`}
 					onMouseEnter={() => setHovered(true)}
 					onMouseLeave={() => setHovered(false)}>
 					I am{" "}

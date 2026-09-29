@@ -14,14 +14,14 @@ export default function Project() {
 	if (!data || data.length === 0) return null;
 
 	return (
-		<section className="w-screen flex flex-col items-center justify-center gap-5 p-10">
+		<section className="flex flex-col items-center justify-center gap-5 p-10">
 			{/* Animated Heading */}
 			<SectionTitle title={title} />
 
 			{/* Projects Grid */}
 			<AnimatedSection>
 				<motion.div
-					className="grid grid-cols-1 xl:grid-cols-2 gap-6 w-full max-w-6xl mx-auto justify-evenly place-items-start"
+					className="grid grid-cols-1 xl:grid-cols-2 gap-6 w-fit mx-auto xl:place-items-center xl:justify-evenly xl:place-items-start"
 					variants={ContainerVariants}
 					initial="hidden"
 					whileInView="visible"

@@ -14,7 +14,7 @@ export default function Education() {
 	if (!data || data.length === 0) return null;
 
 	return (
-		<section className="flex flex-col w-screen text-center items-center p-10 gap-10">
+		<section className="flex flex-col text-center items-center p-10 gap-10">
 			<SectionTitle title={title} />
 
 			<AnimatedSection>

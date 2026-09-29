@@ -85,7 +85,7 @@ export default function Contact() {
 	};
 	return (
 		<section
-			className="flex flex-col w-screen items-center justify-around gap-12 py-4"
+			className="flex flex-col items-center justify-around gap-12 py-4"
 			aria-labelledby="contact-heading">
 			<SectionTitle title={title} />
 
@@ -93,7 +93,7 @@ export default function Contact() {
 				<div className="flex flex-col w-full lg:flex-row gap-10 justify-center items-center">
 					{/* Contact cards */}
 					<motion.div
-						className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full order-2 lg:order-1"
+						className="grid grid-cols-1 md:grid-cols-2 gap-6 p-5 w-full order-2 lg:order-1"
 						initial={{ opacity: 0, x: -60 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
